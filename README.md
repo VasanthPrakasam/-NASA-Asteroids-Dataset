@@ -1,36 +1,38 @@
-# 🌌 NASA Asteroids Dataset Analysis
+# 🚀 NASA Asteroids Classification & Threat Analysis
 
-[![NASA Open Data](https://img.shields.io/badge/Data%20Source-NASA%20Open%20Data-0b3d91?logo=nasa)](https://data.nasa.gov/Space-Science/Near-Earth-Asteroids/)
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://python.org)
-[![License](https://img.shields.io/badge/License-NASA%20Open%20Data%20Agreement-lightgrey)](https://data.nasa.gov/docs/license.html)
+[![NASA Data](https://img.shields.io/badge/Data%20Source-NASA%20CNEOS-0b3d91?logo=nasa)](https://cneos.jpl.nasa.gov/)
+[![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-20BEFF?logo=kaggle)](https://www.kaggle.com/datasets/lovishbansal123/nasa-asteroids-classification)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python)](https://python.org)
 
-**Machine Learning for Planetary Defense & Space Resource Identification**
+**Machine Learning for Planetary Defense Systems**
 
-<img src="https://via.placeholder.com/800x400/0f4d92/ffffff?text=Asteroid+Risk+Assessment+Dashboard" alt="Asteroid Risk Heatmap" width="100%">
+<img src="https://via.placeholder.com/1200x500/0f4d92/ffffff?text=Asteroid+Threat+Classification+System" alt="Project Banner" width="100%">
 
 ## 📌 Project Focus
-This repository transforms NASA's Near-Earth Object (NEO) data into actionable insights for:
-- **Hazard prediction** (Earth-impact risk modeling)
-- **Space mining potential** (mineral composition analysis)
-- **Orbital trajectory forecasting** (DL time-series)
+This repository implements a **multi-class classification system** for Near-Earth Objects (NEOs) using NASA's JPL data to:
 
-## 🛠️ Tech Stack
-| Category        | Tools                                                                 |
-|-----------------|----------------------------------------------------------------------|
-| **Core**        | Python 3.8+, SQL                                                     |
-| **ML/DL**       | Scikit-learn, XGBoost, TensorFlow (CNNs/RNNs)                       |
-| **Visualization**| Plotly, Matplotlib, PowerBI                                         |
-| **Deployment**  | Flask API, Docker, AWS Lambda                                       |
+- Predict asteroid threat levels (Torino Scale)
+- Identify mineral composition from spectral data
+- Quantify economic value for space mining
 
-## 🗂 Dataset Features
-Key variables analyzed:
+## 🔍 Dataset Highlights
 ```python
-# Critical Features
-nasa_asteroids = {
-    'diameter': 'km',                  # Size estimation
-    'miss_distance': 'LD',             # Lunar Distance (1 LD = 384,400 km)
-    'velocity': 'km/s',                # Relative speed
-    'is_hazardous': 'bool',            # JPL classification
-    'spectral_type': 'str',            # Composition (S-type, C-type, etc.)
-    'orbital_period': 'days'           # Revolution time
+# Key Features (Kaggle Version)
+{
+    'absolute_magnitude': 'H',        # Brightness → Size proxy
+    'est_diameter': 'km',             # Average diameter
+    'relative_velocity': 'km/s',      # Approach speed
+    'miss_distance': 'astronomical',  # 1 AU = ~150M km
+    'orbit_class': 'str',             # Apollo, Aten, etc.
+    'hazardous': 'bool'               # JPL classification
 }
+/nasa-asteroids-classification/
+├── /data/                   # Processed Kaggle dataset
+├── /models/                 # Pretrained models (.pkl)
+├── /notebooks/              # Jupyter notebooks
+│   ├── 1_data_cleaning.ipynb
+│   ├── 2_threat_classification.ipynb
+│   └── 3_mineral_prediction.ipynb
+└── /api/                    # Flask prediction endpoint
+    ├── app.py               # POST /predict_threat_level
+    └── Colabfile
